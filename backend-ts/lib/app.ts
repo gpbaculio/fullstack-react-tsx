@@ -12,10 +12,10 @@ class App {
   public mongoUrl: string =
     'mongodb://iloveshelajoy:abcd123@ds155213.mlab.com:55213/redux-saga';
   constructor() {
-    this.config();
     this.mongoSetup();
     this.userRoutes.routes(this.app);
     this.todoRoutes.routes(this.app);
+    this.config();
   }
 
   private config(): void {
