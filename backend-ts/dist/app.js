@@ -6,7 +6,6 @@ const UserRoutes_1 = require("./routes/UserRoutes");
 const TodoRoutes_1 = require("./routes/TodoRoutes");
 const mongoose = require("mongoose");
 const path = require("path");
-const favicon = require("serve-favicon");
 class App {
     constructor() {
         this.app = express();
@@ -25,10 +24,9 @@ class App {
         if (process.env.NODE_ENV === 'production') {
             // Serve any static files
             this.app.use(express.static(path.join(__dirname, '../../frontend/build')));
-            this.app.use(favicon(path.join(__dirname, '../../frontend/build', 'favicon.ico')));
             // Handle React routing, return all requests to React app
             this.app.get('*', (req, res) => {
-                res.sendFile(path.join(__dirname, '../../frontend/build', 'index.html'));
+                res.sendFile(path.join(__dirname, '../../', 'frontend/build', 'index.html'));
             });
         }
     }
