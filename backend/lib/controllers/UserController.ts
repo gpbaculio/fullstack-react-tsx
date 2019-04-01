@@ -17,6 +17,7 @@ export default class UserController {
   // add new contact
   public logIn = (req: Request, res: Response) => {
     const { email, password } = req.body;
+    console.log('req.body ', req.body);
     User.findOne({ email }).then(user => {
       if (user && user.isValidPassword(password)) {
         res.status(200).json({ user: user.toAuthJSON() });
