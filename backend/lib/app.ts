@@ -13,9 +13,9 @@ class App {
     'mongodb://iloveshelajoy:abcd123@ds155213.mlab.com:55213/redux-saga';
   constructor() {
     this.mongoSetup();
-    this.config();
     this.userRoutes.routes(this.app);
     this.todoRoutes.routes(this.app);
+    this.config();
   }
 
   private config(): void {
