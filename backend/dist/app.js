@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const UserRoutes_1 = require("./routes/UserRoutes");
 const TodoRoutes_1 = require("./routes/TodoRoutes");
 const mongoose = require("mongoose");
-const path = require("path");
+const path = require('path');
 class App {
     constructor() {
         this.app = express();
