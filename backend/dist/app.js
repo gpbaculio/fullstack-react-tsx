@@ -25,10 +25,11 @@ class App {
         // serving static files
         if (process.env.NODE_ENV === 'production') {
             // Serve any static files
-            this.app.use(express.static(path.join(__dirname, '../../frontend/build')));
+            console.log('prod!');
+            this.app.use(express.static(path.join('../../frontend/build')));
             // Handle React routing, return all requests to React app
-            this.app.get('*', (req, res) => {
-                res.sendFile(path.join(__dirname, '../../frontend/build', 'index.html'));
+            this.app.get('/*', (req, res) => {
+                res.sendFile(path.join('../../frontend/build', 'index.html'));
             });
         }
     }
