@@ -12,6 +12,12 @@ class App {
   public mongoUrl: string =
     'mongodb://iloveshelajoy:abcd123@ds155213.mlab.com:55213/redux-saga';
   constructor() {
+    this.app.use(
+      bodyParser.urlencoded({
+        extended: true
+      })
+    );
+    this.app.use(bodyParser.json());
     this.mongoSetup();
     this.userRoutes.routes(this.app);
     this.todoRoutes.routes(this.app);
@@ -19,12 +25,6 @@ class App {
   }
 
   private config(): void {
-    this.app.use(
-      bodyParser.urlencoded({
-        extended: true
-      })
-    );
-    this.app.use(bodyParser.json());
     // serving static files
     if (process.env.NODE_ENV === 'production') {
       // Serve any static files
