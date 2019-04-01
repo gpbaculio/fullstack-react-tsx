@@ -4,7 +4,6 @@ import UserRoutes from './routes/UserRoutes';
 import TodoRoutes from './routes/TodoRoutes';
 import * as mongoose from 'mongoose';
 import * as path from 'path';
-import * as favicon from 'serve-favicon';
 
 class App {
   public app: express.Application = express();
@@ -27,9 +26,6 @@ class App {
       // Serve any static files
       this.app.use(
         express.static(path.join(__dirname, '../../frontend/build'))
-      );
-      this.app.use(
-        favicon(path.join(__dirname, '../../frontend/build', 'favicon.ico'))
       );
       // Handle React routing, return all requests to React app
       this.app.get('*', (req, res) => {
