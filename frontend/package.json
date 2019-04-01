@@ -69,6 +69,5 @@
   "proxy": "http://localhost:8000",
   "engines": {
     "node": "8.11.2"
-  },
-  "homepage": "."
+  }
 }

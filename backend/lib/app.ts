@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 import UserRoutes from './routes/UserRoutes';
 import TodoRoutes from './routes/TodoRoutes';
 import * as mongoose from 'mongoose';
-import * as path from 'path';
+const path = require('path');
 
 class App {
   public app: express.Application = express();
