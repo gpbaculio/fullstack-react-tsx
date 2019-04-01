@@ -116,7 +116,7 @@ export const fetchUser = (): ThunkAction<
   try {
     const {
       data: { user }
-    } = await axios.get('/api/user/current');
+    } = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/user/current`);
     dispatch({ type: FETCH_USER_SUCCESS, payload: { user } });
   } catch (error) {
     dispatch({ type: FETCH_USER_FAILURE, payload: { error } });
