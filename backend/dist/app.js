@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express = require("express");
-const bodyParser = require("body-parser");
+const bodyParser = require('body-parser');
 const UserRoutes_1 = require("./routes/UserRoutes");
 const TodoRoutes_1 = require("./routes/TodoRoutes");
 const mongoose = require("mongoose");
@@ -13,9 +13,9 @@ class App {
         this.todoRoutes = new TodoRoutes_1.default();
         this.mongoUrl = 'mongodb://iloveshelajoy:abcd123@ds155213.mlab.com:55213/redux-saga';
         this.mongoSetup();
+        this.config();
         this.userRoutes.routes(this.app);
         this.todoRoutes.routes(this.app);
-        this.config();
     }
     config() {
         this.app.use(bodyParser.urlencoded({
