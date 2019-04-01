@@ -31,7 +31,7 @@ class App {
       console.log('prod!');
       this.app.use(express.static('../../frontend/build'));
       // Handle React routing, return all requests to React app
-      this.app.get('/*', (req, res) => {
+      this.app.get('*', (req, res) => {
         res.sendFile('../../frontend/build/index.html');
       });
     }
